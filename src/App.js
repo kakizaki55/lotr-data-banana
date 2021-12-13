@@ -15,6 +15,13 @@ function App() {
   }, []);
 
   const getFilms = async () => {
+    const resp = await fetch('https://the-one-api.dev/v2/movie/', {
+      headers: {
+        Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
+      },
+    });
+    const data = await resp.json();
+    await console.log(data);
     // Add your code here!
     // 1. Get data using fetch from https://the-one-api.dev/v2/movie/ (don't forget to set your header!)
     // 2. Transform the response so that films contains nested arrays of:
@@ -31,6 +38,13 @@ function App() {
   };
 
   const getCharacters = async () => {
+    const resp = await fetch('https://the-one-api.dev/v2/character/', {
+      headers: {
+        Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
+      },
+    });
+    const data = await resp.json();
+    await console.log(data);
     // Add your code here!
     // 1. Get data using fetch from https://the-one-api.dev/v2/character/
     // 2. Update the response data with the key `dates` which is a combination of
