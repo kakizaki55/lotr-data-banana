@@ -1,6 +1,6 @@
 import './App.css';
 import { useEffect, useState } from 'react';
-import { BrowserRouter, NavLink } from 'react-router-dom';
+import { BrowserRouter, NavLink, Switch, Route } from 'react-router-dom';
 
 import CharacterList from './components/Characters/CharacterList';
 import FilmList from './components/Films/FilmList';
@@ -71,7 +71,10 @@ function App() {
             Characters
           </NavLink>
         </header>
-        {/* ADD YOUR ROUTES HERE */}
+        <Switch>
+          <Route path="/films" component={FilmList}></Route>
+          <Route path="/characters" component={CharacterList}></Route>
+        </Switch>
       </BrowserRouter>
     </div>
   );

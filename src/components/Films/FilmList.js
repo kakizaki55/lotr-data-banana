@@ -3,7 +3,8 @@ import React from 'react';
 export default function FilmList({ films }) {
   return (
     <section className="films">
-      {films.map((film) => (
+      <h1>FilmList Component</h1>
+      {/* {films.map((film) => (
         <div
           className="film"
           key={film[1]}
@@ -16,7 +17,7 @@ export default function FilmList({ films }) {
             </p>
           </div>
         </div>
-      ))}
+      ))} */}
     </section>
   );
 }
