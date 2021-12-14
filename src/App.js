@@ -44,7 +44,12 @@ function App() {
       },
     });
     const data = await resp.json();
-    setCharacters(data);
+    const charList = data;
+    const charArray = charList.map((char) => {
+      return { id: char.id, name: char.name, dates: `${char.birth} - ${char.death}` };
+    });
+
+    setCharacters(charArray);
 
     //    [
     //       {name: 'Adanel', birth: "", death: "", dates: "Unknown", ...},
